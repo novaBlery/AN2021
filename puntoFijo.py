@@ -1,10 +1,10 @@
 import numpy as np
 
-gx = lambda x: 0.4*np.exp(x**2)
+gx = lambda x: 0.4*np.exp(x**2) #se ingresa x = g(x) -> el despeje de la funcion
 
 def puntoFijo(xi, err):
     err = err * 100
-    x = gx(xi)
+    x = gx(xi) #se calcula xi+1 = g(xi)
     e = abs((x - xi)/x)*100
 
     while e > err:
