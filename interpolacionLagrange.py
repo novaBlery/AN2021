@@ -21,12 +21,12 @@ for i in range(0, len(xi)):
             denominador = (xi[i] - xi[j])
             denominadores_l.append(denominador)
 
-    numerador_str = " * ".join(map(str, numeradores_l)) #se unen los numeradores obtenidos para cada L
-    denominador_str = " * ".join(map(str, denominadores_l)) #se unen los denominadores obtenidos para cada L
-    p = "( " + numerador_str + " / " + denominador_str + ")" + " * " +str(fi[i]) #forma de L -> num/den * f(x)
+    numerador_str = " * ".join(map(str, numeradores_l)) # se unen los numeradores obtenidos para cada L
+    denominador_str = " * ".join(map(str, denominadores_l)) # se unen los denominadores obtenidos para cada L
+    p = "( " + numerador_str + " / " + denominador_str + ")" + " * " +str(fi[i]) # forma de L -> num/den * f(x)
     terminos_l.append(p)
 
-polinomio = " + ".join(map(str, terminos_l)) #se unen los L obtenidos para formar el polinomio interpolante
+polinomio = " + ".join(map(str, terminos_l)) # se unen los L obtenidos para formar el polinomio interpolante
 print("El polinomio interpolante es: \n" + polinomio)
 
 
