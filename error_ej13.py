@@ -10,3 +10,4 @@ for n in range(1,31):
     trunc = math.trunc(func)
     redon = round(func)
     print("\n" + "\033[1;37m" + "{:<40} {:<40} {:<40} {:<40} {:<20} {:<10}".format(n, h, real, func, trunc, redon))
+
