@@ -28,6 +28,6 @@ for i in range(0,n):
     P.append(p)
 
 polinomio = " + ".join(map(str, P)) #se unen los L obtenidos para formar el polinomio interpolante
-print(polinomio)
+print("El polinomio interpolante es: \n" + polinomio)
 
 
