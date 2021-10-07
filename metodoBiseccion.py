@@ -21,3 +21,4 @@ def biseccion(a, b, err):
     print("La raiz aproximada es x = " + str(m) + ", con un error de " + str(e) + "%")
 
 biseccion(0,1,0.01)
+

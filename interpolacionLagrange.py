@@ -1,9 +1,8 @@
 import sympy as sym
-import numpy as np
 
 # definimos los valores de x y f(x)
-xi = np.array([1, 2, 3])
-fi = np.array([10, 15, 30])
+xi = [1, 2, 3]
+fi = [10, 15, 30]
 
 x = sym.Symbol("x") # variable simbolica
 i = 0
