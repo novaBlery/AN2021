@@ -16,3 +16,4 @@ def newtonRaphson(x0, err):
     print("La raiz aproximada es " + str(x) + ", con un error de " + str(e) + "%")
 
 newtonRaphson(0,0.01)
+
