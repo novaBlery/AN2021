@@ -7,20 +7,24 @@ init_printing(use_latex=True)
 x = sp.Symbol("x")
 
 def trapecios(f, a, b, n):
+     # imprime la integral a resolver
      integral = sp.Integral(f, (x, a, b))
      print("\nLa integral a resolver es:\n")
      pprint(integral)
 
+     # devuleve el resultado de la integral por el método de integración
      rtaInteg = sp.integrate(f, (x, a, b))
      print("\nIntegrando el resultado es:\n")
      pprint(rtaInteg)
 
+     # covertimos la entrada en sympy a numpy para poder trabajar con ella
      expr = f
      fx = lambdify(x, expr, "numpy")
 
      h = (b - a) / n
      muestras = n + 1
 
+     # calcula el área del trapecio
      sum = 0
      xi = a
      for i in range(0, n, 1):
@@ -31,12 +35,9 @@ def trapecios(f, a, b, n):
      xi = np.linspace(a, b, muestras)
      fi = fx(xi)
 
-     muestrasLinea = muestras * 5
-     xL = np.linspace(a, b, muestrasLinea)
-     fL = fx(xL)
-
+     # grafica de la integral obtenida por el método de trapecios
      plt.plot(xi, fi, "o", color="red")
-     plt.plot(xL, fL, color="black")
+     plt.plot(xi, fi, color="black")
      plt.fill_between(xi, 0, fi, color="blue")
      for i in range(0, muestras, 1):
           plt.axvline(xi[i], color="green")
@@ -44,5 +45,9 @@ def trapecios(f, a, b, n):
 
      print("\nResultado de la integral por el método de trapecios: " + str(sum) + "\n")
 
-trapecios(sp.Pow(x,2), 0, 1, 3)
+     error = abs(sum - rtaInteg)
+
+     print("\nEl error absoluto es: " + str(error) + "\n")
+
+trapecios(sp.Pow((x+5),2), -1, 1, 3)
 
