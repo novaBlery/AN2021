@@ -12,12 +12,12 @@ def trapecios(f, a, b, n):
      print("\nLa integral a resolver es:\n")
      pprint(integral)
 
-     # devuleve el resultado de la integral por el método de integración
+     # devuelve el resultado de la integral por el método de integración
      rtaInteg = sp.integrate(f, (x, a, b))
      print("\nIntegrando el resultado es:\n")
      pprint(rtaInteg)
 
-     # covertimos la entrada en sympy a numpy para poder trabajar con ella
+     # convertimos la entrada en sympy a numpy para poder trabajar con ella
      expr = f
      fx = lambdify(x, expr, "numpy")
 
@@ -35,7 +35,7 @@ def trapecios(f, a, b, n):
      xi = np.linspace(a, b, muestras)
      fi = fx(xi)
 
-     # grafica de la integral obtenida por el método de trapecios
+     # gráfica de la integral obtenida por el método de trapecios
      plt.plot(xi, fi, "o", color="red")
      plt.plot(xi, fi, color="black")
      plt.fill_between(xi, 0, fi, color="blue")
