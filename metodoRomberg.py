@@ -28,10 +28,12 @@ def romberg(f, a, b, n):
      xi = np.arange(a, B, h) # genera todos los x
      #print(xi)
 
+     trapeciosT = []
+
      subH = 1
      for i in range(n):
          sumfx = 0
-         print(" --- ")
+         #print(" --- ")
          subH *= 2
          for j in range(0, len(xi), subH):
              #print(xi[j])
@@ -43,8 +45,8 @@ def romberg(f, a, b, n):
              #print(sumfx)
              totalTrapecios = ((subH * h) / 2) * sumfx
 
-         print("TOTAL " + str(totalTrapecios))
-
+         trapeciosT.append(totalTrapecios)
+         #print("TOTAL " + str(totalTrapecios))
 
 
 
