@@ -50,4 +50,3 @@ def trapecios(f, a, b, n):
      print("\nEl error absoluto es: " + str(error) + "\n")
 
 trapecios(sp.Pow((x+5),2), -1, 1, 3)
-
