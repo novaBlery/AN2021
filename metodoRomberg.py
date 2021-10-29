@@ -27,14 +27,15 @@ def romberg(f, a, b, n):
 
      xi = np.arange(a, B, h) # genera todos los x
      #print(xi)
+     print("\nLos puntos son: " + str(xi))
 
-     trapeciosT = []
+     trapeciosT = [] # guarda todos los T obtenidos
 
+    # TRAPECIOS
      subH = 1
-     for i in range(n):
+     for i in range(n+1):
          sumfx = 0
          #print(" --- ")
-         subH *= 2
          for j in range(0, len(xi), subH):
              #print(xi[j])
              if(xi[j] != a and xi[j] != b):
@@ -46,11 +47,23 @@ def romberg(f, a, b, n):
              totalTrapecios = ((subH * h) / 2) * sumfx
 
          trapeciosT.append(totalTrapecios)
-         #print("TOTAL " + str(totalTrapecios))
+         print("\nT" + str(subH) + "h = " + str(totalTrapecios))
+         subH *= 2 # incrementa el valor de Tnh siendo siempre múltiplo de 2 (h, 2h, ..., 8h)
 
+     # PRIMER PASO ROMBERG
+     print("\nROMBERG: Primer paso")
+     Th = ((4 * trapeciosT[0]) - trapeciosT[1]) / 3
+     print("\nTh = " + str(Th))
+     T2h = ((4 * trapeciosT[0]) - trapeciosT[1]) / 3
+     print("\nTh = " + str(Th))
 
+     # SEGUNDO PASO ROMBERG
+     print("\nROMBERG: Segundo paso")
+     TH = ((16 * Th) - T2h) / 15
+     print("\nEl resultado de la integral por el método de Romberg es " + str(TH))
 
 romberg(sp.Pow(x,3), 2, 4, 3)
+
 
 
 
