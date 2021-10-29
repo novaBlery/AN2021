@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import sympy as sp
 from sympy import *
 init_printing(use_latex=True)
