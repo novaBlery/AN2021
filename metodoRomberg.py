@@ -35,15 +35,11 @@ def romberg(f, a, b, n):
      subH = 1
      for i in range(n+1):
          sumfx = 0
-         #print(" --- ")
          for j in range(0, len(xi), subH):
-             #print(xi[j])
              if(xi[j] != a and xi[j] != b):
                  sumfx += 2 * (fx(xi[j]))
              else:
                  sumfx += fx(xi[j])
-
-             #print(sumfx)
              totalTrapecios = ((subH * h) / 2) * sumfx
 
          trapeciosT.append(totalTrapecios)
