@@ -29,8 +29,8 @@ def romberg(f, a, b, n):
      #print(xi)
 
      subH = 1
-     sumfx = 0
      for i in range(n):
+         sumfx = 0
          print(" --- ")
          subH *= 2
          for j in range(0, len(xi), subH):
