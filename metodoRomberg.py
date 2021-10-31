@@ -57,7 +57,7 @@ def romberg(f, a, b, n):
      TH = ((16 * Th) - T2h) / 15
      print("\nEl resultado de la integral por el método de Romberg es " + str(TH))
 
-romberg(sp.Pow(x,3), 2, 4, 3)
+romberg(sp.Pow(x,3), 2, 4, 3) #testeo
 
 
 
