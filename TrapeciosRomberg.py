@@ -52,6 +52,6 @@ def romberg(f, a, b, n):
     TH = ((16 * Th) - T2h) / 15
     print("\nEl resultado de la integral por el método de Romberg es " + str(TH))
 
-# prueba de los métodos
+# testeo de los métodos
 trapecios(lambda x: np.power((x+5),2), -1, 1, 3)
 romberg(lambda x: np.power(x,3), 2, 4, 3)
