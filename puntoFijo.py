@@ -2,7 +2,7 @@ import numpy as np
 
 gx = lambda x: 0.4*np.exp(x**2) # se ingresa x = g(x) -> el despeje de la funcion
 
-def puntoFijo(xi, err):
+def puntoFijo(xi, err): #xi es el valor inicial de x y err es el error
     err = err * 100
     x = gx(xi) # se calcula xi+1 = g(xi)
     e = abs((x - xi)/x)*100
