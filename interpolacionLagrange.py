@@ -16,7 +16,7 @@ for i in range(0, len(xi)):
 
     for j in range(0, len(xi)):
         if i != j:
-            numerador = (x - xi[j])
+            numerador = ("(" + str(x - xi[j]) + ")")
             numeradores_l.append(numerador)
             denominador = (xi[i] - xi[j])
             denominadores_l.append(denominador)
@@ -24,10 +24,12 @@ for i in range(0, len(xi)):
     numeradores_str = " * ".join(map(str, numeradores_l))
     denominadores_str = " * ".join(map(str, denominadores_l))
     # la interpolacion de Lagrange pide una forma particular de L que es L = x-xj/xi-xj * f(x)
-    termino_p = "( " + numeradores_str + " / " + denominadores_str + ")" + " * " +str(fi[i])
+    termino_p = "[ " + " ( " + numeradores_str + " ) " + " / " + " ( " + denominadores_str + " ) " + "]" + " * " +str(fi[i])
     terminos_l.append(termino_p)
 
 polinomio = " + ".join(map(str, terminos_l)) # se unen los L obtenidos para formar el polinomio interpolante
 print("El polinomio interpolante es: \n" + polinomio)
+
+
 
 
