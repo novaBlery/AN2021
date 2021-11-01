@@ -41,6 +41,9 @@ def trapecios(f, a, b, n):
      plt.fill_between(xi, 0, fi, color="blue")
      for i in range(0, muestras, 1):
           plt.axvline(xi[i], color="green")
+     plt.title('Método de Trapecios')
+     plt.xlabel('x')
+     plt.ylabel('y')
      plt.show()
 
      print("\nResultado de la integral por el método de trapecios: " + str(sum) + "\n")
