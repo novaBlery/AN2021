@@ -1,10 +1,11 @@
-import sympy as sym
+import sympy as sp
+from graficaLagrange import grafico
 
 # definimos los valores de x y f(x)
-xi = [1, 2, 3]
-fi = [10, 15, 30]
+xi = [1, 3, 4]
+fi = [1, sp.sqrt(3), 2]
 
-x = sym.Symbol("x") # variable simbolica
+x = sp.Symbol("x") # variable simbolica
 i = 0
 
 terminos_l = [] # recopila todos los L's calculados
@@ -29,6 +30,9 @@ for i in range(0, len(xi)):
 
 polinomio = " + ".join(map(str, terminos_l)) # se unen los L obtenidos para formar el polinomio interpolante
 print("El polinomio interpolante es: \n" + polinomio)
+
+grafico(xi,fi)
+
 
 
 
