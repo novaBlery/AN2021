@@ -2,6 +2,7 @@ import numpy as np
 import sympy as sp
 from sympy import *
 init_printing(use_latex=True)
+import matplotlib.pyplot as plt
 
 x = sp.Symbol("x")
 
@@ -57,7 +58,19 @@ def romberg(f, a, b, n):
      TH = ((16 * Th) - T2h) / 15
      print("\nEl resultado de la integral por el método de Romberg es " + str(TH))
 
+     fi = fx(xi)
+     # gráfica de la integral obtenida por el método de trapecios
+     plt.plot(xi, fi, color="black")
+     plt.fill_between(xi, 0, fi, color="blue")
+     plt.title('Método de Romberg')
+     plt.xlabel('x')
+     plt.ylabel('y')
+     plt.grid()
+     plt.show()
+
 romberg(sp.Pow(x,3), 2, 4, 3) #testeo
+
+
 
 
 
