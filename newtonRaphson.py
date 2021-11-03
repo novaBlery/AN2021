@@ -1,9 +1,10 @@
 import sympy as sp
 
-def newtonRaphson(x0, err):
+x = sp.Symbol("x")
+
+def newtonRaphson(f, x0, err):
     # datos de la funcion a aplicar el metodo y su derivada
-    x = sp.Symbol("x")
-    f = (1 / sp.exp(x)) - x
+    global x
     df = sp.diff(f)
 
     # convertimos la entrada en sympy a numpy para poder trabajar con ella
@@ -21,5 +22,5 @@ def newtonRaphson(x0, err):
 
     print("La raiz aproximada es " + str(x) + ", con un error de " + str(e) + "%")
 
-newtonRaphson(0,0.01)
+newtonRaphson((1 / sp.exp(x)) - x,0,0.01)
 
